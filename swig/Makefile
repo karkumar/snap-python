@@ -53,6 +53,10 @@ agmfit.o:
 
 _snap.so: snap_wrap.o Snap.o cliques.o agm.o agmfast.o agmfit.o
 	g++ $(LDFLAGS) -o _snap.so snap_wrap.o Snap.o cliques.o agm.o agmfast.o agmfit.o $(LIBS)
+ifeq ($(UNAME), Darwin)
+	install_name_tool -change /System/Library/Frameworks/Python.framework/Versions/2.7/Python @executable_path/../lib/libpython2.7.dylib _snap.so 	
+endif
+
 
 snap.py: snap_wrap.cxx
 
