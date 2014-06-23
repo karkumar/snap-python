@@ -150,6 +150,7 @@ Version = "1.0.2"
 %template(TIntFltKd) TKeyDat<TInt, TFlt>;
 
 %template(TIntV) TVec<TInt>;
+%template(TIntVV) TVec<TVec<TInt>>;
 %template(TFltV) TVec<TFlt>;
 %template(TIntPrV) TVec<TIntPr>;
 %template(TFltPrV) TVec<TFltPr>;
